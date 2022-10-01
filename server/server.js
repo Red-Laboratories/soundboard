@@ -10,9 +10,8 @@ app.get('/', (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 })
 
-
 // local error handler
-app.use((req, res) => { 
+app.use((req, res) => {
     // server log
     console.log('this endpoint does not exist in server.js');
     // response to client
@@ -25,10 +24,10 @@ app.use((err, req, res, next) => {
     let defaultErr = {
         log: 'there is an error with unspecified middleware',
         status: 500,
-        message:{err: 'there is a server side error'}
+        message: { err: 'there is a server side error' }
     }
     // reassign default error object with info passed in via err arg
-    defaultErr = Object.assign(defaultErr, {log: err.log, message:err.message});
+    defaultErr = Object.assign(defaultErr, err);
     // log server side error to server terminal
     console.log(defaultErr.log);
     // return status and client side error to client
