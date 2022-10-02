@@ -2,12 +2,12 @@ const db = require('../models/soundboardModel');
 
 const soundboardController = {};
 
-// const createErr = (method) => {
-//     return ({
-//         log: `This error occured in ${method} method inside soundboardController`,
-//         message: `This error occured in ${method} method inside soundboardController, check terminal for error info`
-//     });
-// };
+const createErr = (method) => {
+    return ({
+        log: `This error occured in ${method} method inside soundboardController`,
+        message: `This error occured in ${method} method inside soundboardController, check terminal for error info`
+    });
+};
 
 soundboardController.getButtons = (req, res, next) => {
   const buttonStr = 'SELECT * FROM button_components;'
