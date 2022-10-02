@@ -1,14 +1,21 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const apiRouter = require('./routes/api');
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // must keep express.static to serve bundle.js
 app.use('/build', express.static(path.join(__dirname, "../build")));
 
 app.get('/', (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 })
+
+
+// send to api router for requests to database
+app.use('/api', apiRouter);
 
 // local error handler
 app.use((req, res) => {
