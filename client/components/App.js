@@ -14,23 +14,18 @@ const getSound = async() => {
 }
 // create a function to make patch request to update database when we update state
 
-btnKey = [
-    Q,W,E,
-
-]
-
 function App() {
-    
-    const [btnKey, changeKey] = useState(getBtnKeys()); //pull from data        
-    const [sound, changeSound] = useState(getSound());
+    // pass evaluated result of getSound and getBtnKEys to useState for our initial state
+    const [btnKey, changeKey] = useState(["Q","W","E","A","S","D","Z","X","C"]); 
+    const [sound, changeSound] = useState(["Q","W","E","A","S","D","Z","X","C"]);
 
     console.log(btnKey);
     console.log(sound);
     const board = []
-    for(i = 0; i < 9; i++){
+    for(let i = 0; i < 9; i++){
         board.push(<Button key={i} btnKeyVal={btnKey[i]} soundVal={sound[i]}/>)
     }
-        
+    console.log(board)    
     return (
         <main>
             <header>
@@ -38,7 +33,9 @@ function App() {
                     Hello World
                 </div>
             </header>
-            {board}
+            <div>
+                {board}
+            </div> 
         </main>
     )
 
