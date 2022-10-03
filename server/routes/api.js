@@ -3,9 +3,9 @@ const soundboardController = require('../controllers/soundboardController');
 const router = express.Router();
 
 
-router.get('/main', 
-soundboardController.getButtons, 
-(req, res) => res.status(200).json(res.locals.buttons));
+router.get('/main',
+    soundboardController.getButtons,
+    (req, res) => res.status(200).json(res.locals.buttons));
 
 
 // main page
@@ -26,6 +26,6 @@ soundboardController.getButtons,
 
 // router.patch('/main', (req, res) => res.status(200).json({}));
 
-// router.get('/sound', (req, res) => res.status(200).json({}));
+router.get('/sounds', soundboardController.getSounds, (req, res) => res.status(200).json(res.locals.sounds));
 
 module.exports = router;
