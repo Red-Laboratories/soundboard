@@ -1,7 +1,7 @@
 import React from 'react';
 import login from './img/logo.png'
 
-function Login () {
+function Signup () {
     return(
       // <div>
       //   <input type='text' placeholder='username'/>
@@ -26,14 +26,11 @@ function Login () {
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <button class="bg-slate-400 border-b-4 border-slate-500 py-2 px-4 rounded-xl hover:bg-slate-300 text-white font-bold shadow-xl" onClick={loginClick}>
-                        Login
+                    <button class="bg-slate-400 border-b-4 border-slate-500 py-2 px-4 rounded-xl hover:bg-slate-300 text-white font-bold shadow-xl" onClick={() => {window.location.href='/board'}}>
+                        Signup
                     </button>
                 </div>
                 
-            </div>
-            <div class="text-center">
-                <p class="text-grey-dark text-sm">Don't have an account? <a href="#" class="no-underline text-blue font-bold" onClick={() => {window.location.href='/signup'}}>Create an Account</a>.</p>
             </div>
         </div>
     </div>
@@ -42,4 +39,4 @@ function Login () {
 }
    
 
-export default Login;
+export default Signup;

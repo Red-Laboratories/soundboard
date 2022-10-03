@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import logo2 from './img/logo2.png'
 
 // create a function to pull info from DB to create initial btnKey & sound state
 const getBtnKeys = async () => {
@@ -29,9 +30,12 @@ function Board() {
   }
   return (
     <div>
-      <div className="bg-slate-400 py-2 px-2 border-b-8 border-slate-500 rounded-xl border">
-        <h1 className="font-bold text-3xl text-center text-slate-300">SoundBoard</h1>
-        <div className="grid grid-cols-3 gap-4">
+      <div className="m-auto max-w-5xl bg-slate-400 border-b-8 border-slate-500 rounded-xl border">
+        <h1 className="font-bold text-3xl p-0 text-center text-slate-300">
+          <img className="mt-11 pt-18 w-1/3 float-left" src={logo2} alt="">
+            </img>
+        </h1>
+        <div className="pl-0 grid grid-cols-3 gap-4">
           {board}
         </div>
       </div>
@@ -40,3 +44,31 @@ function Board() {
 }
 
 export default Board;
+
+/*app.post('/auth', function(request, response) {
+	// Capture the input fields
+	let username = request.body.username;
+	let password = request.body.password;
+	// Ensure the input fields exists and are not empty
+	if (username && password) {
+		// Execute SQL query that'll select the account from the database based on the specified username and password
+		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+			// If there is an issue with the query, output the error
+			if (error) throw error;
+			// If the account exists
+			if (results.length > 0) {
+				// Authenticate the user
+				request.session.loggedin = true;
+				request.session.username = username;
+				// Redirect to home page
+				response.redirect('/board');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});*/
