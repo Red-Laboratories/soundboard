@@ -10,7 +10,8 @@ module.exports = {
 	// define output
 	output: {
 		path: path.resolve(__dirname, './build'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: '/'
 	},
 	// add plugin(s)  html webpack
 	plugins: [
@@ -66,12 +67,13 @@ module.exports = {
 		static: {
 			directory: path.join(__dirname, './build'), // path.resolve => user/tommyli/desktop/scractchproject/soundboard/build
 		},
+		historyApiFallback: true,
 		// set up proxy
 		compress: true,
 		port: 8080,
 		hot: true,
 		proxy: {
-			'/': 'http://localhost:3000' // localhost:3000/
+			'/api': 'http://localhost:3000' // localhost:3000/
 		}
 	}
 
