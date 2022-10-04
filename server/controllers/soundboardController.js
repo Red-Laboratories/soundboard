@@ -10,7 +10,7 @@ const createErr = (method) => {
 };
 
 soundboardController.getButtons = (req, res, next) => {
-  const buttonStr = 'SELECT * FROM button_components;'
+  const buttonStr = 'SELECT button_components.*, sounds.sound FROM button_components LEFT JOIN sounds ON button_components.sound_id = sounds.id'
   db.query(buttonStr)
     .then(data => {
       res.locals.buttons = data.rows;

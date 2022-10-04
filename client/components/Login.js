@@ -1,5 +1,5 @@
 import React from 'react';
-
+import login from './img/logo.png'
 
 function loginClick() {
   const username = document.getElementById('username').value;
@@ -33,11 +33,41 @@ function loginClick() {
 
 function Login () {
     return(
-      <div>
-        <input type='text' id ='username' placeholder='username'/>
-        <input type='password' id ='password' placeholder='password'/>
-        <button onClick={loginClick}>login</button>
-      </div>
+      // <div>
+      //   <input type='text' placeholder='username'/>
+      //   <input type='password' placeholder='password'/>
+      //   <button onClick={() => {window.location.href='/board'}}>login</button>
+      // </div>
+<body class="max-h-fit max-w-4xl mx-auto my-auto bg-slate-400 border-b-8 border-slate-500 shadow-2xl rounded-xl border">
+    <div class="container mx-auto h-full flex justify-center items-center">
+        <div class="w-1/3">
+            <h1 class="pt-0">
+              <img src={login} alt=""></img>
+            </h1>
+            <div class="p-8 border-t-5 bg-slate-300 mb-6 py-2 px-2 border-b-8 border-slate-400 rounded-xl shadow-2xl">
+                <div>
+                    <label class="font-bold text-grey-darker block mb-2">Username</label>
+                    <input type="text" id ='username' class="w-full bg-white border border-b-4 border-slate-400 block appearance-none border-grey-light hover:border-grey px-2 py-2 rounded-xl shadow-xl" placeholder="Email"></input>
+                </div>
+
+                <div>
+                    <label class="font-bold text-grey-darker block mb-2">Password</label>
+                    <input type="text" id="password" class="w-full bg-white border-b-4 border-slate-400 block appearance-none border border-grey-light hover:border-grey px-2 py-2 rounded-xl shadow-xl mb-2" placeholder="Password"></input>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button class="bg-slate-400 border-b-4 border-slate-500 py-2 px-4 rounded-xl hover:bg-slate-300 text-white font-bold shadow-xl" onClick={loginClick}>
+                        Login
+                    </button>
+                </div>
+                
+            </div>
+            <div class="text-center">
+                <p class="text-grey-dark text-sm">Don't have an account? <a href="#" class="no-underline text-blue font-bold" onClick={() => {window.location.href='/signup'}}>Create an Account</a>.</p>
+            </div>
+        </div>
+    </div>
+</body>
     )
 }
    
