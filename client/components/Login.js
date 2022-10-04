@@ -52,7 +52,7 @@ function Login () {
 
                 <div>
                     <label class="font-bold text-grey-darker block mb-2">Password</label>
-                    <input type="text" id="password" class="w-full bg-white border-b-4 border-slate-400 block appearance-none border border-grey-light hover:border-grey px-2 py-2 rounded-xl shadow-xl mb-2" placeholder="Password"></input>
+                    <input type="password" id="password" class="w-full bg-white border-b-4 border-slate-400 block appearance-none border border-grey-light hover:border-grey px-2 py-2 rounded-xl shadow-xl mb-2" placeholder="Password"></input>
                 </div>
 
                 <div class="flex items-center justify-between">
@@ -73,31 +73,3 @@ function Login () {
    
 
 export default Login;
-
-/*app.post('/', function(request, response) {
-	// Capture the input fields
-	let username = request.body.username;
-	let password = request.body.password;
-	// Ensure the input fields exists and are not empty
-	if (username && password) {
-		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			// If there is an issue with the query, output the error
-			if (error) throw error;
-			// If the account exists
-			if (results.length > 0) {
-				// Authenticate the user
-				request.session.loggedin = true;
-				request.session.username = username;
-				// Redirect to home page
-				response.redirect('/board');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-});*/
