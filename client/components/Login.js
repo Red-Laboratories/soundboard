@@ -26,7 +26,7 @@ function Login () {
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <button class="bg-slate-400 border-b-4 border-slate-500 py-2 px-4 rounded-xl hover:bg-slate-300 text-white font-bold shadow-xl" onClick={loginClick}>
+                    <button class="bg-slate-400 border-b-4 border-slate-500 py-2 px-4 rounded-xl hover:bg-slate-300 text-white font-bold shadow-xl" onClick={() => {window.location.href='/board'}}>
                         Login
                     </button>
                 </div>
