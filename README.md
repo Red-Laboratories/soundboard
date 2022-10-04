@@ -20,7 +20,7 @@ Importable Scene to [Excalidraw](./client/components/img/soundboard-excalidraw.p
 ### Setup
 1. Execute npm install
 2. devServer -  use npm run dev
-3. production - 
+3. production - **sounds currently not working**
     1. npm run build
     2. npm start
 4. Login
@@ -36,6 +36,7 @@ Importable Scene to [Excalidraw](./client/components/img/soundboard-excalidraw.p
 4. Database storing button keyboard value and sound file name
 
 ### Notes
+1. sounds currently not playing while in production 
 1. You may want to change the URI for the SQL database for better configuring. 
 [URI Location](server/models/soundboardModel.js)
 2. Importing new sounds -
