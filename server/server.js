@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const apiRouter = require('./routes/api');
+const cookieParser = require('cookie-parser');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // send to api router for requests to database
 app.use('/api', apiRouter);
@@ -13,12 +15,16 @@ app.use('/api', apiRouter);
 app.use('/build', express.static(path.join(__dirname, "../build")));
 
 app.get('/', (req, res) => {
+    console.log('we should see this ');
     return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 })
+
+
 
 app.get('/*', (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
+
 
 // local error handler
 app.use((req, res) => {
