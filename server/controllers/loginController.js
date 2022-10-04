@@ -72,7 +72,7 @@ loginController.checkCookies = (req, res, next) => {
     })
     .catch(err => { next(createErr(err)) });
 }
-// forgot about fam dinner :(((
+
 loginController.logout = (req, res, next) => {
   // delete cookie in databse
   const deleteCookie = 'DELETE FROM sessions WHERE $1 = session;';

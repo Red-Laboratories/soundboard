@@ -8,6 +8,7 @@ const checkCookie = () => {
     .then(res => res.json())
     .then(data => {
       if (data === 'unauthorized') {
+        // re-route request to home page if they do not have a cookie
         window.location.href = '/';
       } else {
         console.log('welcome back!')
@@ -23,6 +24,7 @@ const logout = () => {
   })
   .then(res => res.json())
   .then(data => {
+    // reroute to login page after deleting cookie
     window.location.href = '/';
   })
   .catch(err =>console.log('error with logout in Board.js'))
