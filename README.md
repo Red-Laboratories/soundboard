@@ -15,6 +15,7 @@ Online launchpad that allows you to customize a grid of buttons and play them us
 ### Diagrams
 Importable Scene to [Excalidraw](./client/components/img/soundboard-excalidraw.png)
 -Contains mapping of frontend and backend
+[ER Diagram](./client/components/img/Database.png)
 
 ### Setup
 1. Execute npm install
