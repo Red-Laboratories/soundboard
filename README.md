@@ -25,8 +25,8 @@ Online launchpad that allows you to customize a grid of buttons and play them us
     2. npm start
 4. Login
     * At server startup you will be auto directed to a login page. Please enter the below credentials to use the sound board
-    * username: tracy
-    * password: ilovedogs
+    * Username: tracy
+    * Password: ilovedogs
 
 ### Working features
 1. Login/Logout
@@ -36,14 +36,14 @@ Online launchpad that allows you to customize a grid of buttons and play them us
 4. Database storing button keyboard value and sound file name
 
 ### Notes
-1. sounds currently not playing while in production 
+1. Sounds currently not playing while in production 
 1. You may want to change the URI for the SQL database for better configuring. 
 [URI Location](server/models/soundboardModel.js)
 2. Importing new sounds -
-    1. download sounds to your local machine first 
-    2. test sounds using your preferred media player
-    3. drag and drop into [sound](client/components/sounds)
-3. keyboard values on board are supposed to be in the following order for better UX, but order got rearranged working on an imcomplete feature.
+    1. Download sounds to your local machine first 
+    2. Test sounds using your preferred media player
+    3. Drag and drop into [sound](client/components/sounds)
+3. Keyboard values on board are supposed to be in the following order for better UX, but order got rearranged working on an imcomplete feature.
     * Q W E
     * A S D
     * Z X C
